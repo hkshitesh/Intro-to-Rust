@@ -14,5 +14,5 @@ fn main()
     println!("Vector elements are {:?}",numbers);
     println!("deleted element is {}",del_element);    
     v_len = numbers.len();
-    println!("Length of Number vector is {}",v_len);
+    println!("Length of Number vector is {}",v_len);    
 }
