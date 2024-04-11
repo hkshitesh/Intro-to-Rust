@@ -21,22 +21,35 @@
 //     println!("X is {}",x);
 // }
 
-macro_rules! unit_converter {
-    ($fn_name:ident, $conversion:expr) =>{
-        fn $fn_name(val:f64) -> f64 {
-            val*$conversion
+// macro_rules! unit_converter {
+//     ($fn_name:ident, $conversion:expr) =>{
+//         fn $fn_name(val:f64) -> f64 {
+//             val*$conversion
+//         }
+//     };
+// }
+
+// unit_converter!(inches_to_cm,2.54);
+// unit_converter!(km_to_m,1000.0);
+// fn main()
+// {
+//     let inches = 10.0;
+//     let cm = inches_to_cm(inches);
+//     println!("{} inches is {} centimeters",inches,cm);
+//     let km =25.5;
+//     let m = km_to_m(km);
+//     println!("{} Km is {} meters",km,m);
+// }
+
+macro_rules! repeat {
+    ($a:expr, $times:expr)=>{
+        for _ in 0..$times {
+            $a
         }
     };
 }
 
-unit_converter!(inches_to_cm,2.54);
-unit_converter!(km_to_m,1000.0);
 fn main()
 {
-    let inches = 10.0;
-    let cm = inches_to_cm(inches);
-    println!("{} inches is {} centimeters",inches,cm);
-    let km =25.5;
-    let m = km_to_m(km);
-    println!("{} Km is {} meters",km,m);
+    repeat!(println!("Hello Rust"),100);
 }
